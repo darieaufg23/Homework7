@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Домашня сторінка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar button {
+            margin-left: 10px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .navbar button:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="location.href='/login'">Login</button>
+        <button onclick="location.href='/register'">Register</button>
+    </div>
+    <h1>Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.title }} - {{ product.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
